@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>hexo基础使用</title>
+    <link href="/2023/09/22/hello-world/"/>
+    <url>/2023/09/22/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><h3 id="安装插件可视化操作"><a href="#安装插件可视化操作" class="headerlink" title="安装插件可视化操作"></a>安装插件可视化操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-admin</span><br><span class="line">$ hexo s -d   <span class="comment">#启动服务</span></span><br></pre></td></tr></table></figure><p><code>注意: 访问可视化网址为https://localhost:4000/admin，原网址依旧可看到博客内容</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DOM与BOM</title>
+    <link href="/2023/09/22/webApi/"/>
+    <url>/2023/09/22/webApi/</url>
+    
+    <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><h5 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h5><p>文档对象模型<br>用来呈现以及与任意HTML或XML文档交互</p><p>文档树直观体现标签与标签之间的关系</p><p>DOM对象：浏览器根据html标签生成的js对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;div&#x27;</span>)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">dir</span>(div)  <span class="hljs-comment">//dir专门打印对象</span><br></code></pre></td></tr></table></figure><h6 id="获取元素注意要点"><a href="#获取元素注意要点" class="headerlink" title="获取元素注意要点"></a>获取元素注意要点</h6><p>querySelectorAll(‘css选择器’)得到的是伪数组，没有pop(),push()等数组方法，想要得到里面每一个对象就需要遍历(for)的方式获取</p><hr><h5 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h5><p>浏览器对象模型</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
