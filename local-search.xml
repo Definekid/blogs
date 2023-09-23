@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>捕获和冒泡</title>
+    <link href="/2023/09/23/%E6%8D%95%E8%8E%B7%E5%92%8C%E5%86%92%E6%B3%A1/"/>
+    <url>/2023/09/23/%E6%8D%95%E8%8E%B7%E5%92%8C%E5%86%92%E6%B3%A1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件完整执行过程中的流动路径</p><h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><blockquote><p>从DOM的根元素开始去执行对应的事件（从外到里）</p></blockquote><p>eg. 爷爷-父亲-儿子</p><p>捕获需要些对应代码才能看到效果</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable constant_">DOM</span>.<span class="hljs-title function_">addEventListener</span>(事件类型，事件处理函数，是否使用捕获机制)   <br><span class="hljs-comment">// true即捕获（很少使用）</span><br></code></pre></td></tr></table></figure><p>若是用LO事件监听，则只有冒泡阶段，没有捕获</p><h3 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h3><blockquote><p>当一个元素触发事件后，会一次向上调用所有父级元素的<code>同名事件</code></p></blockquote><p>eg. 儿子-父亲-爷爷</p><p> 事件冒泡是默认存在的</p><p> L2事件监听第三个参数是false, 或者默认都是冒泡</p><h4 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h4><p>把事件限制在当前元素内，就需要阻止事件冒泡</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">事件对象<span class="hljs-string">.stopPropagation</span><span class="hljs-params">()</span><br></code></pre></td></tr></table></figure><p>此方法可以阻断事件流动传播，不光在冒泡阶段有效，捕获阶段也有效</p><h4 id="解绑事件"><a href="#解绑事件" class="headerlink" title="解绑事件"></a>解绑事件</h4><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs 1c">L0: btn.onclick=<span class="hljs-literal">null</span><br>L02： btn.removeEventListener()<br><span class="hljs-comment">// 但匿名函数无法被解绑</span><br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> btn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;button&#x27;</span>)<br>btn.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br><span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;点击了&#x27;</span>)<br>btn.<span class="hljs-property">onclick</span> = <span class="hljs-literal">null</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params"></span>) &#123;<br>   <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;...&#x27;</span>)   <br>   btn.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>,fn)<br>&#125;<br>btn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>,fn)<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>js模板函数</title>
+    <link href="/2023/09/22/js%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0/"/>
+    <url>/2023/09/22/js%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h4 id="取得随机数N-M"><a href="#取得随机数N-M" class="headerlink" title="取得随机数N~M"></a>取得随机数N~M</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getRandom</span>(<span class="hljs-params">N,M</span>)&#123;<br>   <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*(M-N+<span class="hljs-number">1</span>))+N<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hexo基础使用</title>
     <link href="/2023/09/22/hello-world/"/>
     <url>/2023/09/22/hello-world/</url>
