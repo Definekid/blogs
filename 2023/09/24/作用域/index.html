@@ -16,23 +16,23 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="取得随机数N~M123function getRandom(N,M)&amp;#123;   return Math.floor(Math.random()*(M-N+1))+N&amp;#125;">
+    <meta name="description" content="局部作用域函数作用域(外部无法访问) 块作用域 let声明的变量会产生块级作用域，var不会产生块作用域 const声明的常量也会产生块作用域 不同代码块之间的变量无法相互访问      推荐使用let或const 全局作用域script和js文件的最外层就是所谓的全局作用域 全局作用域中声明的变量，任何其他作用域都可以访问 为window对象动态添加的属性默认为全局的，不推荐 函数中未使用任何关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js模板函数">
-<meta property="og:url" content="http://example.com/2023/09/22/js%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="作用域">
+<meta property="og:url" content="http://example.com/2023/09/24/%E4%BD%9C%E7%94%A8%E5%9F%9F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="取得随机数N~M123function getRandom(N,M)&amp;#123;   return Math.floor(Math.random()*(M-N+1))+N&amp;#125;">
+<meta property="og:description" content="局部作用域函数作用域(外部无法访问) 块作用域 let声明的变量会产生块级作用域，var不会产生块作用域 const声明的常量也会产生块作用域 不同代码块之间的变量无法相互访问      推荐使用let或const 全局作用域script和js文件的最外层就是所谓的全局作用域 全局作用域中声明的变量，任何其他作用域都可以访问 为window对象动态添加的属性默认为全局的，不推荐 函数中未使用任何关">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-22T08:19:00.000Z">
-<meta property="article:modified_time" content="2023-09-24T15:32:53.474Z">
+<meta property="article:published_time" content="2023-09-24T12:13:00.000Z">
+<meta property="article:modified_time" content="2023-09-24T15:31:26.097Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="js">
-<meta property="article:tag" content="模板实例">
+<meta property="article:tag" content="理论知识">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>js模板函数 - Hexo</title>
+  <title>作用域 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="js模板函数"></span>
+            <span id="subtitle" data-typed-text="作用域"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-22 16:19" pubdate>
-          2023年9月22日 下午
+        <time datetime="2023-09-24 20:13" pubdate>
+          2023年9月24日 晚上
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          86 字
+          290 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -269,12 +269,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">js模板函数</h1>
+            <h1 id="seo-header">作用域</h1>
             
             
               <div class="markdown-body">
                 
-                <h4 id="取得随机数N-M"><a href="#取得随机数N-M" class="headerlink" title="取得随机数N~M"></a>取得随机数N~M</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getRandom</span>(<span class="hljs-params">N,M</span>)&#123;<br>   <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*(M-N+<span class="hljs-number">1</span>))+N<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h4 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h4><p>函数作用域(外部无法访问) 块作用域</p>
+<p>let声明的变量会产生块级作用域，var不会产生块作用域</p>
+<p>const声明的常量也会产生块作用域</p>
+<p>不同代码块之间的变量无法相互访问<br>      推荐使用let或const</p>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>script和js文件的最外层就是所谓的全局作用域</p>
+<p>全局作用域中声明的变量，任何其他作用域都可以访问</p>
+<p>为window对象动态添加的属性默认为全局的，不推荐</p>
+<p>函数中未使用任何关键词声明的变量为全局作用域，不推荐</p>
+<p>尽可能少的声明全局变量，防止全局变量被污染</p>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><p>本质是 变量查找机制</p>
+<ol>
+<li>在变量被执行时，会优先查找当前函数作用域中变量</li>
+<li>如果当前作用域查找不到会依次逐级查找父级作用域直到全局作用域</li>
+</ol>
+
                 
               </div>
             
@@ -288,7 +302,7 @@
       
         <a href="/tags/js/" class="print-no-link">#js</a>
       
-        <a href="/tags/%E6%A8%A1%E6%9D%BF%E5%AE%9E%E4%BE%8B/" class="print-no-link">#模板实例</a>
+        <a href="/tags/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" class="print-no-link">#理论知识</a>
       
     </div>
   
@@ -300,8 +314,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>js模板函数</div>
-      <div>http://example.com/2023/09/22/js模板函数/</div>
+      <div>作用域</div>
+      <div>http://example.com/2023/09/24/作用域/</div>
     </div>
     <div class="license-meta">
       
@@ -313,7 +327,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月22日</div>
+          <div>2023年9月24日</div>
         </div>
       
       
@@ -345,9 +359,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/23/%E6%8D%95%E8%8E%B7%E5%92%8C%E5%86%92%E6%B3%A1/" title="捕获和冒泡">
+                      <a href="/2023/09/24/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" title="垃圾回收机制（GC）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">捕获和冒泡</span>
+                        <span class="hidden-mobile">垃圾回收机制（GC）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -355,8 +369,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/22/hello-world/" title="hexo基础使用">
-                        <span class="hidden-mobile">hexo基础使用</span>
+                      <a href="/2023/09/24/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" title="本地存储">
+                        <span class="hidden-mobile">本地存储</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
