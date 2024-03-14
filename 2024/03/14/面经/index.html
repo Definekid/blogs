@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="前端,技术,博客,个人">
+  
+    <meta name="description" content="03.14山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训） 如果让你从0实现一个vue路由的话，你有什么样的思路？  VueRouter类src&#x2F;my-router.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经">
+<meta property="og:url" content="http://example.com/2024/03/14/%E9%9D%A2%E7%BB%8F/index.html">
+<meta property="og:site_name" content="Definekid&#39;s Blog">
+<meta property="og:description" content="03.14山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训） 如果让你从0实现一个vue路由的话，你有什么样的思路？  VueRouter类src&#x2F;my-router.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-14T08:22:34.000Z">
+<meta property="article:modified_time" content="2024-03-14T08:22:51.413Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="前端,技术,博客,个人">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>面经 - Definekid&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="面经"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-14 16:22" pubdate>
+          2024年3月14日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">面经</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="03-14"><a href="#03-14" class="headerlink" title="03.14"></a>03.14</h1><h3 id="山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训）"><a href="#山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训）" class="headerlink" title="山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训）"></a>山东依智科技有限公司（1个月2500，没完成认为会扣钱，无实习培训）</h3><blockquote>
+<p>如果让你从0实现一个vue路由的话，你有什么样的思路？</p>
+</blockquote>
+<h3 id="VueRouter类"><a href="#VueRouter类" class="headerlink" title="VueRouter类"></a>VueRouter类</h3><h6 id="src-my-router-js"><a href="#src-my-router-js" class="headerlink" title="src&#x2F;my-router.js"></a>src&#x2F;my-router.js</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">HashHistory</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./hashHistory&quot;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">VueRouter</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">options</span>) &#123;<br><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span> = options<br><br>        <span class="hljs-comment">// 如果不传mode，默认为hash</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">mode</span> = options.<span class="hljs-property">mode</span> || <span class="hljs-string">&#x27;hash&#x27;</span><br><br>        <span class="hljs-comment">// 判断模式是哪种</span><br>        <span class="hljs-keyword">switch</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">mode</span>) &#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;hash&#x27;</span>:<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashHistory</span>(<span class="hljs-variable language_">this</span>)<br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;history&#x27;</span>:<br>                <span class="hljs-comment">// this.history = new HTML5History(this, options.base)</span><br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;abstract&#x27;</span>:<br><br>        &#125;<br>    &#125;<br>    <span class="hljs-title function_">init</span>(<span class="hljs-params">app</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>.<span class="hljs-title function_">listen</span>(<span class="hljs-function">(<span class="hljs-params">route</span>) =&gt;</span> app.<span class="hljs-property">_route</span> = route)<br><br>        <span class="hljs-comment">// 初始化时执行一次，保证刷新能渲染</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>.<span class="hljs-title function_">transitionTo</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">hash</span>.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>))<br>    &#125;<br><br>    <span class="hljs-comment">// 根据hash变化获取对应的所有组件</span><br>    <span class="hljs-title function_">createMathcer</span>(<span class="hljs-params">location</span>) &#123;<br>        <span class="hljs-keyword">const</span> &#123; pathMap &#125; = <span class="hljs-title function_">createRouteMap</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span>.<span class="hljs-property">routes</span>)<br><br>        <span class="hljs-keyword">const</span> record = pathMap[location]<br>        <span class="hljs-keyword">const</span> local = &#123;<br>            <span class="hljs-attr">path</span>: location<br>        &#125;<br>        <span class="hljs-keyword">if</span> (record) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">createRoute</span>(record, local)<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_">createRoute</span>(<span class="hljs-literal">null</span>, local)<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">let</span> _Vue<br><span class="hljs-title class_">VueRouter</span>.<span class="hljs-property">install</span> = <span class="hljs-function">(<span class="hljs-params">Vue</span>) =&gt;</span> &#123;<br>    _Vue = <span class="hljs-title class_">Vue</span><br>    <span class="hljs-comment">// 使用Vue.mixin混入每一个组件</span><br>    <span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">mixin</span>(&#123;<br>        <span class="hljs-comment">// 在每一个组件的beforeCreate生命周期去执行</span><br>        <span class="hljs-title function_">beforeCreate</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">$options</span>.<span class="hljs-property">router</span>) &#123; <span class="hljs-comment">// 如果是根组件</span><br>                <span class="hljs-comment">// this 是 根组件本身</span><br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_routerRoot</span> = <span class="hljs-variable language_">this</span><br><br>                <span class="hljs-comment">// this.$options.router就是挂在根组件上的VueRouter实例</span><br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">$options</span>.<span class="hljs-property">router</span><br><br>                <span class="hljs-comment">// 执行VueRouter实例上的init方法，初始化</span><br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">init</span>(<span class="hljs-variable language_">this</span>)<br><br>                <span class="hljs-comment">// 相当于存在_routerRoot上，并且调用Vue的defineReactive方法进行响应式处理</span><br>                <span class="hljs-title class_">Vue</span>.<span class="hljs-property">util</span>.<span class="hljs-title function_">defineReactive</span>(<span class="hljs-variable language_">this</span>, <span class="hljs-string">&#x27;_route&#x27;</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-property">history</span>.<span class="hljs-property">current</span>)<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 非根组件，也要把父组件的_routerRoot保存到自身身上</span><br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_routerRoot</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">$parent</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">$parent</span>.<span class="hljs-property">_routerRoot</span><br>                <span class="hljs-comment">// 子组件也要挂上$router</span><br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">_routerRoot</span>.<span class="hljs-property">$router</span><br>            &#125;<br>        &#125;<br>    &#125;)<br>    <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(<span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>, <span class="hljs-string">&#x27;$route&#x27;</span>, &#123;<br>        <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">_routerRoot</span>.<span class="hljs-property">_route</span><br>        &#125;<br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">createRouteMap</span>(<span class="hljs-params">routes</span>) &#123;<br><br>    <span class="hljs-keyword">const</span> pathList = []<br>    <span class="hljs-keyword">const</span> pathMap = &#123;&#125;<br><br>    <span class="hljs-comment">// 对传进来的routes数组进行遍历处理</span><br>    routes.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">route</span> =&gt;</span> &#123;<br>        <span class="hljs-title function_">addRouteRecord</span>(route, pathList, pathMap)<br>    &#125;)<br><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(pathList)<br>    <span class="hljs-comment">// [&quot;/home&quot;, &quot;/home/child1&quot;, &quot;/home/child2&quot;, &quot;/hello&quot;, &quot;/hello/child1&quot;]</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(pathMap)<br>    <span class="hljs-comment">// &#123;</span><br>    <span class="hljs-comment">//     /hello: &#123;path: xxx, component: xxx, parent: xxx &#125;,</span><br>    <span class="hljs-comment">//     /hello/child1: &#123;path: xxx, component: xxx, parent: xxx &#125;,</span><br>    <span class="hljs-comment">//     /hello/child2: &#123;path: xxx, component: xxx, parent: xxx &#125;,</span><br>    <span class="hljs-comment">//     /home: &#123;path: xxx, component: xxx, parent: xxx &#125;,</span><br>    <span class="hljs-comment">//     /home/child1: &#123;path: xxx, component: xxx, parent: xxx &#125;</span><br>    <span class="hljs-comment">// &#125;</span><br><br><br>    <span class="hljs-comment">// 将pathList与pathMap返回</span><br>    <span class="hljs-keyword">return</span> &#123;<br>        pathList,<br>        pathMap<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">addRouteRecord</span>(<span class="hljs-params">route, pathList, pathMap, parent</span>) &#123;<br>    <span class="hljs-comment">// 拼接path</span><br>    <span class="hljs-keyword">const</span> path = parent ? <span class="hljs-string">`<span class="hljs-subst">$&#123;parent.path&#125;</span>/<span class="hljs-subst">$&#123;route.path&#125;</span>`</span> : route.<span class="hljs-property">path</span><br>    <span class="hljs-keyword">const</span> &#123; component, children = <span class="hljs-literal">null</span> &#125; = route<br>    <span class="hljs-keyword">const</span> record = &#123;<br>        path,<br>        component,<br>        parent<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!pathMap[path]) &#123;<br>        pathList.<span class="hljs-title function_">push</span>(path)<br>        pathMap[path] = record<br>    &#125;<br>    <span class="hljs-keyword">if</span> (children) &#123;<br>        <span class="hljs-comment">// 如果有children，则递归执行addRouteRecord</span><br>        children.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">child</span> =&gt;</span> <span class="hljs-title function_">addRouteRecord</span>(child, pathList, pathMap, record))<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">createRoute</span>(<span class="hljs-params">record, location</span>) &#123;<br>    <span class="hljs-keyword">const</span> res = []<br>    <span class="hljs-keyword">if</span> (record) &#123;<br>        <span class="hljs-keyword">while</span> (record) &#123;<br>            res.<span class="hljs-title function_">unshift</span>(record)<br>            record = record.<span class="hljs-property">parent</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> &#123;<br>        ...location,<br>        <span class="hljs-attr">matched</span>: res<br>    &#125;<br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">VueRouter</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="src-hashHistory-js"><a href="#src-hashHistory-js" class="headerlink" title="src&#x2F;hashHistory.js"></a><strong>src&#x2F;hashHistory.js</strong></h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">HashHistory</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">router</span>) &#123;<br><br>        <span class="hljs-comment">// 将传进来的VueRouter实例保存</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">router</span> = router<br><br>        <span class="hljs-comment">// 一开始给current赋值初始值</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">current</span> = <span class="hljs-title function_">createRoute</span>(<span class="hljs-literal">null</span>, &#123;<br>            <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span><br>        &#125;)<br><br>        <span class="hljs-comment">// 如果url没有 # ，自动填充 /#/ </span><br>        <span class="hljs-title function_">ensureSlash</span>()<br><br>        <span class="hljs-comment">// 监听hash变化</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setupHashLister</span>()<br>    &#125;<br>    <span class="hljs-comment">// 监听hash的变化</span><br>    <span class="hljs-title function_">setupHashLister</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;hashchange&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-comment">// 传入当前url的hash</span><br>            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">transitionTo</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">hash</span>.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>))<br>        &#125;)<br>    &#125;<br><br>    <span class="hljs-comment">// 跳转路由时触发的函数</span><br>    <span class="hljs-title function_">transitionTo</span>(<span class="hljs-params">location</span>) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(location)<br>        <br>        <span class="hljs-comment">// 找出所有对应组件</span><br>        <span class="hljs-keyword">let</span> route = <span class="hljs-variable language_">this</span>.<span class="hljs-property">router</span>.<span class="hljs-title function_">createMathcer</span>(location)<br><br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(route)<br><br>        <span class="hljs-comment">// hash更新时给current赋真实值</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">current</span> = route<br>        <span class="hljs-comment">// 同时更新_route</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">cb</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">cb</span>(route)<br>    &#125;<br>    <span class="hljs-comment">// 监听回调</span><br>    <span class="hljs-title function_">listen</span>(<span class="hljs-params">cb</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">cb</span> = cb<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 如果浏览器url上没有#，则自动补充/#/</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">ensureSlash</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">hash</span>) &#123;<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">hash</span> = <span class="hljs-string">&#x27;/&#x27;</span><br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">createRoute</span>(<span class="hljs-params">record, location</span>) &#123;<br>    <span class="hljs-keyword">const</span> res = []<br>    <span class="hljs-keyword">if</span> (record) &#123;<br>        <span class="hljs-keyword">while</span> (record) &#123;<br>            res.<span class="hljs-title function_">unshift</span>(record)<br>            record = record.<span class="hljs-property">parent</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> &#123;<br>        ...location,<br>        <span class="hljs-attr">matched</span>: res<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">HashHistory</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="src-views-js"><a href="#src-views-js" class="headerlink" title="src&#x2F;views.js"></a>src&#x2F;views.js</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myView = &#123;<br>    <span class="hljs-attr">functional</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-title function_">render</span>(<span class="hljs-params">h, &#123; parent, data &#125;</span>) &#123;<br>        <span class="hljs-keyword">const</span> &#123; matched &#125; = parent.<span class="hljs-property">$route</span><br><br>        data.<span class="hljs-property">routerView</span> = <span class="hljs-literal">true</span> <span class="hljs-comment">// 标识此组件为router-view</span><br>        <span class="hljs-keyword">let</span> depth = <span class="hljs-number">0</span> <span class="hljs-comment">// 深度索引</span><br><br>        <span class="hljs-keyword">while</span>(parent) &#123;<br>            <span class="hljs-comment">// 如果有父组件且父组件为router-view 说明索引需要加1</span><br>            <span class="hljs-keyword">if</span> (parent.<span class="hljs-property">$vnode</span> &amp;&amp; parent.<span class="hljs-property">$vnode</span>.<span class="hljs-property">data</span>.<span class="hljs-property">routerView</span>) &#123;<br>                depth++<br>            &#125;<br>            parent = parent.<span class="hljs-property">$parent</span><br>        &#125;<br>        <span class="hljs-keyword">const</span> record = matched[depth]<br><br>        <span class="hljs-keyword">if</span> (!record) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>()<br>        &#125;<br><br>        <span class="hljs-keyword">const</span> component = record.<span class="hljs-property">component</span><br><br>        <span class="hljs-comment">// 使用render的h函数进行渲染组件</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(component, data)<br><br>    &#125;<br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> myView<br></code></pre></td></tr></table></figure>
+
+<h6 id="src-link-js"><a href="#src-link-js" class="headerlink" title="src&#x2F;link.js"></a>src&#x2F;link.js</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> myLink = &#123;<br>    <span class="hljs-attr">props</span>: &#123;<br>        <span class="hljs-attr">to</span>: &#123;<br>            <span class="hljs-attr">type</span>: <span class="hljs-title class_">String</span>,<br>            <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,<br>        &#125;,<br>    &#125;,<br>    <span class="hljs-comment">// 渲染</span><br>    <span class="hljs-title function_">render</span>(<span class="hljs-params">h</span>) &#123;<br><br>        <span class="hljs-comment">// 使用render的h函数渲染</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_">h</span>(<br>            <span class="hljs-comment">// 标签名</span><br>            <span class="hljs-string">&#x27;a&#x27;</span>,<br>            <span class="hljs-comment">// 标签属性</span><br>            &#123;<br>                <span class="hljs-attr">domProps</span>: &#123;<br>                    <span class="hljs-attr">href</span>: <span class="hljs-string">&#x27;#&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">to</span>,<br>                &#125;,<br>            &#125;,<br>            <span class="hljs-comment">// 插槽内容</span><br>            [<span class="hljs-variable language_">this</span>.<span class="hljs-property">$slots</span>.<span class="hljs-property">default</span>]<br>        )<br>    &#125;,<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> myLink<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<blockquote>
+<p>阐述一下你对闭包的理解，闭包有什么样的优缺点？包括它的一些用途什么的？</p>
+</blockquote>
+<h6 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h6><p><strong>闭包让你可以在一个内层函数中访问到其外层函数的作用域，内部函数存在对外部函数局部变量的引用就会导致闭包</strong></p>
+<h6 id="优缺点："><a href="#优缺点：" class="headerlink" title="优缺点："></a>优缺点：</h6><p>优点：</p>
+<ol>
+<li>保护函数内的变量安全 ，实现封装，防止变量流入其他环境发生命名冲突</li>
+<li>避免全局变量的污染</li>
+<li>在内存中维持一个变量，可以做缓存</li>
+<li>匿名自执行函数可以减少内存消耗</li>
+</ol>
+<p>缺点：</p>
+<table>
+<thead>
+<tr>
+<th>缺点</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用闭包会包含其他函数的作用域，会比其他函数占据更多的内存空间，不会再调用结束之后被垃圾回收机制（GC机制）回收，过度使用闭包会占用内存，造成<strong>内存泄漏</strong></td>
+<td>在退出函数之前，将不需要的局部变量赋值为null</td>
+</tr>
+<tr>
+<td>闭包会在父函数外部改变父函数内部变量的值</td>
+<td>不要随便改变父函数内部变量的值</td>
+</tr>
+<tr>
+<td>由于闭包涉及跨域访问，所以会导致<strong>性能损失</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<h6 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h6><ol>
+<li>return 一个内部函数，读取内部函数的变量</li>
+<li>函数作为参数</li>
+<li>自执行函数</li>
+<li>循环赋值</li>
+<li>使用回调函数就是在使用闭包</li>
+<li>将外部函数创建的变量值始终保持在内存中</li>
+<li>封装对象的私有对象和私有方法</li>
+</ol>
+<h6 id="闭包例子"><a href="#闭包例子" class="headerlink" title="闭包例子"></a>闭包例子</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>; i++)&#123;<br>    (<span class="hljs-keyword">function</span>(<span class="hljs-params">j</span>)&#123;<br>        <span class="hljs-built_in">setTimeout</span>(data[j] = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(j);<br>        &#125;,<span class="hljs-number">0</span>)<br>    &#125;)(i)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>说一说你对vue响应式的理解，响应式是怎么样实现的？有什么优缺点？</p>
+</blockquote>
+<p>理解：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903882208837640"><strong>Vue能够实现数据和视图的自动更新</strong></a></p>
+<p>实现：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Pentoncos/article/details/104782467">Vue实现响应式的核心方法是<strong>使用Object.defineProperty对数据进行劫持，给数据添加getter和setter属性，从而实现数据变化时通知视图更新</strong></a></p>
+<p>优缺点：</p>
+<p>优点：</p>
+<ol>
+<li>代码简洁</li>
+<li>自动更新</li>
+<li>高效性能</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>新增属性的响应问题    Vue.set()</li>
+<li>数组变动的响应问题    使用数组变异方法：Vue提供了一些数组变异方法（例如push、pop、shift、unshift、splice、sort和reverse）  | |     Vue.set()</li>
+<li>对象属性的删除问题    Vue.delete()</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>面经</div>
+      <div>http://example.com/2024/03/14/面经/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/14/%E9%9D%A2%E8%AF%95%E5%A4%A7%E5%85%B8/" title="面试大典">
+                        <span class="hidden-mobile">面试大典</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
